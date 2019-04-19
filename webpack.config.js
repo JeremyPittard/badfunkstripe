@@ -66,7 +66,7 @@ module.exports = {
   },
   plugins: [
     new StyleLintPlugin(),
-    new MiniCssExtractPlugin({ filename: '../style.css' }),
+    new MiniCssExtractPlugin({ filename: '../public/main.css' }),
     new SpriteLoaderPlugin(),
     // browsersync not really needed in this case left to be turned on if needed
     // new BrowserSyncPlugin({

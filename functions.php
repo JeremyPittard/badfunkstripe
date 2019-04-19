@@ -122,6 +122,9 @@ add_action( 'widgets_init', 'badfunkstripe_widgets_init' );
 function badfunkstripe_scripts() {
 	wp_enqueue_style( 'badfunkstripe-style', get_stylesheet_uri() );
 
+	wp_enqueue_style ('my-style', get_template_directory_uri().'/public/main.css', array('theme-style'));
+
+
 	wp_enqueue_script( 'badfunkstripe-navigation', get_template_directory_uri() . '/src/js/navigation.js', array(), null, true );
 
 	wp_enqueue_script( 'badfunkstripe-skip-link-focus-fix', get_template_directory_uri() . '/src/js/skip-link-focus-fix.js', array(), null, true );
