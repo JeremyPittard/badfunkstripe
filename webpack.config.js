@@ -4,7 +4,6 @@ const path = require('path'),
   OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
   BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
   StyleLintPlugin = require('stylelint-webpack-plugin'),
-  // ExtractTextPlugin = require('extract-text-webpack-plugin'),
   PurgecssPlugin = require('purgecss-webpack-plugin'), //todo configure purgecss
   ImageminPlugin = require('imagemin-webpack-plugin').default,
   glob = require('glob'),
