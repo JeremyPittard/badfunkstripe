@@ -4,11 +4,15 @@ const path = require('path'),
   OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
   BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
   StyleLintPlugin = require('stylelint-webpack-plugin'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  // ExtractTextPlugin = require('extract-text-webpack-plugin'),
   PurgecssPlugin = require('purgecss-webpack-plugin'), //todo configure purgecss
   ImageminPlugin = require('imagemin-webpack-plugin').default,
   glob = require('glob'),
   SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
+const PATHS = {
+  src: path.join(__dirname, 'src')
+};
 
 module.exports = {
   context: __dirname,
@@ -65,16 +69,20 @@ module.exports = {
     new StyleLintPlugin(),
     new MiniCssExtractPlugin({ filename: '../style.css' }),
     new SpriteLoaderPlugin(),
-    new BrowserSyncPlugin({
-      files: '**/*.php',
-      injectChanges: true,
-      proxy: 'http://underscores.test'
-    }),
+    // browsersync not really needed in this case left to be turned on if needed
+    // new BrowserSyncPlugin({
+    //   files: '**/*.php',
+    //   injectChanges: true,
+    //   proxy: 'http://underscores.test'
+    // }),
     new ImageminPlugin({
       disable: process.env.NODE_ENV !== 'production', // Disable during development
       pngquant: {
-        quality: '95-100'
+        quality: '755-85'
       }
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
     })
   ],
   optimization: {

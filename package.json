@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,scss}\"",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
-    "wp-pot": "wp-pot --src '*.php' --dest-file 'languages/_s.pot' --domain badfunkstripe"
+    "wp-pot": "wp-pot --src '*.php' --dest-file 'languages/badfunkstripe.pot' --domain badfunkstripe"
   },
   "repository": {
     "type": "git",
